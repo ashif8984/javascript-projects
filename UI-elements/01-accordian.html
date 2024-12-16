@@ -1,0 +1,234 @@
+<html lang="en">
+  <head>
+    <!DOCTYPE html>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <title>Accordian Components</title>
+    <style>
+      MAIN COLOR: #087f5b
+    GREY COLOR: #343a40
+    */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .accordian {
+        width: 700px;
+        margin: 100px auto;
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+
+      .item{
+          box-shadow: 0 0 32px rgba(0,0,0,0.1);
+          padding: 24px;
+          display: grid;
+          grid-template-columns: auto 1fr auto;
+          column-gap: 24px;
+          row-gap: 24px;
+          align-items: center ;
+      }
+      .number, .text{
+          font-size: 24px;
+          font-weight: 500;
+          /* color: #087f5b; */
+      }
+      .number{
+          columns: #ced4da;
+      }
+      .icon{
+          width: 24px;
+          height: 24px;
+          stroke: #087f5b;        
+      }
+
+      .hidden-box{
+        grid-column: 2;
+        display: none;   
+      }
+      .hidden-box p{ 
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .hidden-box ul{
+        color: #868e96;
+        margin-left: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .open{
+        border-top: 6px solid green;
+      }
+
+      .open .hidden-box{
+        display: block;
+      }
+
+      .open .number, .open .text{
+        color: #087f5b;
+      }
+      
+    </style>
+
+   
+  </head>
+  <body>
+
+    <div class="accordian">
+      <div class="item" onclick="displayDate()">
+      <p class="number">01</p>
+      <p class="text">Where are the chair assembled ?</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        />
+      </svg>
+      <div class="hidden-box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quis
+          dolorem, temporibus omnis aliquam veniam velit earum in ducimus
+          obcaecat
+        </p>
+        <ul>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            
+          </li>
+        </ul>
+  
+      </div>
+
+      </div>
+    
+      <div class="item ">
+      <p class="number">02</p>
+      <p class="text">How long it will take to return my chair ? </p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        />
+      </svg>
+      <div class="hidden-box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quis
+          dolorem, temporibus omnis aliquam veniam velit earum in ducimus
+          obcaecat
+        </p>
+        <ul>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            
+          </li>
+        </ul>
+  
+      </div>
+
+      </div>
+    
+      <div class="item">
+      <p class="number">03</p>
+      <p class="text">Do you ship to country outside US ?</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        />
+      </svg>
+      <div class="hidden-box">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quis
+          dolorem, temporibus omnis aliquam veniam velit earum in ducimus
+          obcaecat
+        </p>
+        <ul>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          </li>
+          <li>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            
+          </li>
+        </ul>
+  
+      </div>
+
+      </div>
+    </div>
+
+    <script>
+      // document.getElementById("myBtn").addEventListener("click", displayDate);
+      document.getElementsByClassName(".item").addEventListener('click', displayDate)
+      
+      function displayDate() {
+        // window.alert("sometext");
+        $('.item').removeClass('.item').addClass('.open');
+      }
+      </script>
+
+
+
+  </body>
+</html>
